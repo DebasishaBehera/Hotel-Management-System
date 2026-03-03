@@ -1,0 +1,6 @@
+/* Main content wrapper to ensure footer stays at bottom */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}

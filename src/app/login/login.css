@@ -1,0 +1,54 @@
+/* Full page background wrapper */
+.auth-page {
+  background: url('/images/bg.jpg') center/cover no-repeat fixed;
+  min-height: calc(100vh - 66px); /* Subtract navbar height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto; /* Allow scrolling if content is too tall */
+}
+
+.auth-container {
+  max-width: 400px;
+  width: 100%;
+  /* Semi-transparent white background so text is readable over image */
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  text-align: center;
+  backdrop-filter: blur(5px);
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 0.8rem;
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.auth-container button:hover {
+  background: #0056b3;
+}
+
+.msg {
+  color: red;
+  margin-top: 10px;
+}
+.link {
+  color: #007bff;
+  text-decoration: none;
+}

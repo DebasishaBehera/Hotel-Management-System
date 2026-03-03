@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Reset default browser spacing and make app flush with viewport */
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+/* Consistent sizing */
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+/* Ensure root takes full height and uses flexbox for sticky footer */
+app-root {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+/* Make main content area grow to push footer down */
+router-outlet ~ * {
+	flex: 1;
+}

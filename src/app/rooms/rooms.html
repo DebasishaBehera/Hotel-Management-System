@@ -1,0 +1,22 @@
+<div class="rooms-container">
+  <h2>Available Rooms</h2>
+
+  <div *ngIf="loading" class="loading">Loading rooms...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <div class="room-grid" *ngIf="!loading && rooms.length > 0">
+    <div class="room-card" *ngFor="let room of rooms">
+      <img [src]="room.imageUrl || 'assets/default-room.jpg'" alt="Room image" />
+      <h3>{{ room.name }}</h3>
+      <p>{{ room.description }}</p>
+      <div class="price">₹{{ room.pricePerNight }} / night</div>
+      <!-- <button class="book-btn">Book Now</button> -->
+       <button class="book-btn" [routerLink]="['/rooms', room.id]">Book Now</button>
+
+    </div>
+  </div>
+
+  <div *ngIf="!loading && rooms.length === 0" class="no-data">
+    No rooms available at the moment.
+  </div>
+</div>

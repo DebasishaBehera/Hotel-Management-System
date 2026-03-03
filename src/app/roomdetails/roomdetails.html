@@ -1,0 +1,33 @@
+<div class="room-details-container" *ngIf="!loading && room">
+  <div class="room-image">
+    <img [src]="room.imageUrl || 'assets/default-room.jpg'" alt="Room Image" />
+  </div>
+
+  <div class="room-info">
+    <h2>{{ room.name }}</h2>
+    <p>{{ room.description }}</p>
+    <p><strong>Price:</strong> ₹{{ room.pricePerNight }} / night</p>
+    <p><strong>Capacity:</strong> {{ room.capacity }} guests</p>
+  </div>
+
+  <div class="booking-form">
+    <h3>Book This Room</h3>
+    <form (ngSubmit)="bookRoom()">
+      <label>Check-in Date</label>
+      <input type="date" [(ngModel)]="booking.checkInDate" name="checkInDate" required />
+
+      <label>Check-out Date</label>
+      <input type="date" [(ngModel)]="booking.checkOutDate" name="checkOutDate" required />
+
+      <label>Guests</label>
+      <input type="number" [(ngModel)]="booking.guests" name="guests" min="1" required />
+
+      <button type="submit">Confirm Booking</button>
+    </form>
+
+    <p class="msg">{{ message }}</p>
+  </div>
+</div>
+
+<div *ngIf="loading" class="loading">Loading room details...</div>
+<div *ngIf="!loading && !room" class="error">{{ message }}</div>
